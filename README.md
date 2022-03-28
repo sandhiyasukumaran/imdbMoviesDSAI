@@ -16,14 +16,14 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
 |duration|float64||movie\_imdb_link|object|
 |director\_facebook_likes|float64||num\_user_for_reviews|float64|
 |actor\_3_facebook_likes|float64||language|object|
-|actor\_2_name|object||country|object||content\_rating|object|
-|actor\_1_facebook_likes|float64||budget|float64|
-|gross|float64||title\_year|float64|
-|genres|object||actor\_2_facebook_likes|float64|
-|actor\_1_name|object||imdb\_score|float64|
-|movie\_title|object||aspect\_ratio|float64|
-|num\_voted_users|int64||movie\_facebook_likes|int64|
-|cast\_total_facebook_likes|int64|
+|actor\_2_name|object||country|object|
+|actor\_1_facebook_likes|float64||content\_rating|object|
+|gross|float64||budget|float64|
+|genres|object||title\_year|float64|
+|actor\_1_name|object||actor\_2_facebook_likes|float64|
+|movie\_title|object||imdb\_score|float64|
+|num\_voted_users|int64||aspect\_ratio|float64|
+|cast\_total_facebook_likes|int64||movie\_facebook_likes|int64|
 
 
 
