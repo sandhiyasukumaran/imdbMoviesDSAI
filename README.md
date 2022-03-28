@@ -46,15 +46,15 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
 Our ultimate goal is to find out what we should focus on to make our movie successful.
 
 We define success based on: 
-- monetary gains (read **Challenges Faced** section)
-&ensp a. `gross`
-&ensp b. `profit margin` 
+- monetary gains (read [**Challenges Faced**](#challenges-faced) section)
+   - `gross`
+   - `profit margin` 
 - ratings 
-&ensp a. `imdb_score`
+   - `imdb_score`
 - popularity
-&ensp a. `num_critic_for_reviews`
-&ensp b. `num_voted_users`
-&ensp c. `movie_facbook_likes`
+   - `num_critic_for_reviews`
+   - `num_voted_users`
+   - `movie_facbook_likes`
 
 
 ## Step 3: Our hypotheses 
@@ -65,6 +65,10 @@ After doing Univariate EDA, and Bivariate EDA, we have chosen particular variabl
 - Does the length of the title affect movie success? 
 - Are there any types of words that we should include into our movie title to increase our chances of success? 
 
+
+## Challenges Faced 
+Through research, we found that:
+1. The type of gross is not standardised, e.g: 
 
 
 
