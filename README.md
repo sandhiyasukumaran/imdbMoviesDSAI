@@ -8,37 +8,39 @@ Our project is based on IMDB 5000 dataset found on [kaggle](https://www.kaggle.c
 We wonder, **"If we were movie directors, how could we maximise our success rates?"**
 
 ## Step 1: Looking at the Dataset
-
-|index|0|
-|---|---|
-|color|object|
-|director\_name|object|
-|num\_critic_for_reviews|float64|
-|duration|float64|
-|director\_facebook_likes|float64|
-|actor\_3_facebook_likes|float64|
-|actor\_2_name|object|
-|actor\_1_facebook_likes|float64|
-|gross|float64|
-|genres|object|
-|actor\_1_name|object|
-|movie\_title|object|
-|num\_voted_users|int64|
+|variable|dtype||variable|dtype|
+|---|---|---|---|---|
+|color|object||actor\_3_name|object|
+|director\_name|object||facenumber\_in_poster|float64|
+|num\_critic_for_reviews|float64||plot\_keywords|object|
+|duration|float64||movie\_imdb_link|object|
+|director\_facebook_likes|float64||num\_user_for_reviews|float64|
+|actor\_3_facebook_likes|float64||language|object|
+|actor\_2_name|object||country|object||content\_rating|object|
+|actor\_1_facebook_likes|float64||budget|float64|
+|gross|float64||title\_year|float64|
+|genres|object||actor\_2_facebook_likes|float64|
+|actor\_1_name|object||imdb\_score|float64|
+|movie\_title|object||aspect\_ratio|float64|
+|num\_voted_users|int64||movie\_facebook_likes|int64|
 |cast\_total_facebook_likes|int64|
-|actor\_3_name|object|
-|facenumber\_in_poster|float64|
-|plot\_keywords|object|
-|movie\_imdb_link|object|
-|num\_user_for_reviews|float64|
-|language|object|
-|country|object|
-|content\_rating|object|
-|budget|float64|
-|title\_year|float64|
-|actor\_2_facebook_likes|float64|
-|imdb\_score|float64|
-|aspect\_ratio|float64|
-|movie\_facebook_likes|int64|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Step 2: Choosing our variables 
