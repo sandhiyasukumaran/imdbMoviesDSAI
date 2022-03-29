@@ -14,13 +14,12 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
 ## Content Section 
 - Introduction 
 - Steps: 
-  - 1 : [Looking at the Dataset] (#step1)
-  - 2 : [Choosing our Variables] (#step-2-choosing-our-variables)
-  - 3 : [Our Hypotheses] (#step-3-our-hypotheses)
-- [Challenges Faced] (#challenges-faced)
+  - 1 :  [Looking at the Dataset](#step-1-looking-at-the-dataset)
+  - 2 : [Choosing our Variables](#step-2-choosing-our-variables)
+  - 3 : [Our Hypotheses](#step-3-our-hypotheses)
+- [Challenges Faced](#challenges-faced)
 
-
-## <a name = "step1" > Step 1: Looking at the Dataset </a>
+## Step 1: Looking at the Dataset
 |variable|dtype||variable|dtype|
 |---|---|---|---|---|
 |color|object||actor\_3_name|object|
