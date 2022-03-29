@@ -20,7 +20,7 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
 - [Challenges Faced] (#challenges-faced)
 
 
-## <a id = "step1" > Step 1: Looking at the Dataset </a>
+## <a name = "step1" > Step 1: Looking at the Dataset </a>
 |variable|dtype||variable|dtype|
 |---|---|---|---|---|
 |color|object||actor\_3_name|object|
