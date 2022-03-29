@@ -7,6 +7,19 @@ Our project is based on IMDB 5000 dataset found on [kaggle](https://www.kaggle.c
 
 We wonder, **"If we were movie directors, how could we maximise our success rates?"**
 
+## Foreword
+- Sections/ Texts that are highlighted are additional/ extra materials that we learnt outside of our course. 
+
+
+## Content Section 
+- Introduction 
+- Steps: 
+  - 1 [Looking at the Dataset] (#step-1)
+  - 2 [Choosing our Variables] (#step-2-choosing-our-variables)
+  - 3 [Our Hypotheses] (#step-3-our-hypotheses)
+- [Challenges Faced] (#challenges-faced)
+
+<!---> <a name = "step-1" > </a>
 ## Step 1: Looking at the Dataset
 |variable|dtype||variable|dtype|
 |---|---|---|---|---|
@@ -24,23 +37,6 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
 |movie\_title|object||imdb\_score|float64|
 |num\_voted_users|int64||aspect\_ratio|float64|
 |cast\_total_facebook_likes|int64||movie\_facebook_likes|int64|
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ## Step 2: Choosing our variables 
@@ -71,6 +67,10 @@ After doing Univariate EDA, and Bivariate EDA, we have chosen particular variabl
 ## Challenges Faced 
 Through research, we found that:
 1. The type of gross is not standardised, e.g: 
+2. Extremely skewed data
+   - Facebook likes data:
+     - solution: use log transform 
+   
 
 
 
