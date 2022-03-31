@@ -37,6 +37,13 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
 |num\_voted_users|int64||aspect\_ratio|float64|
 |cast\_total_facebook_likes|int64||movie\_facebook_likes|int64|
 
+Dataset info: 
+dimensions ->
+null vals -> 
+
+
+#### Train:Test:Validation 
+We split our dataset into 80:10:10 ratio 
 
 ## Step 2: Choosing our variables 
 
