@@ -49,7 +49,8 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
   #### Cleaning the Train Dataset
   - drop_duplicates()
 
-
+  #### Initial Thoughts 
+  - popularity of cast,
 ## Step 2: Choosing our variables 
 
 Our ultimate goal is to find out what we should focus on to make our movie successful.
@@ -62,8 +63,10 @@ We define success based on:
    - `imdb_score`
 - popularity
    - `num_critic_for_reviews`
+   - `num_user_for_reviews`
    - `num_voted_users`
    - `movie_facbook_likes`
+   
 
 
 ## Step 3: Our hypotheses 
