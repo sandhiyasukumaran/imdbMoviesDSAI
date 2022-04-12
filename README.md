@@ -1,5 +1,6 @@
-# tripleH - Project Overview
+# How to Maximise Movie Success - Project Overview
 
+by tripleH 
 
 Hello, we are Year 1 CS Students from NTU! Welcome to our project for the course : Data Science and Artificial Intelligence 
 
@@ -80,13 +81,29 @@ After doing Univariate EDA, and Bivariate EDA, we have chosen particular variabl
 
 ## Challenges Faced 
 Through research, we found that:
-1. The type of gross is not standardised, e.g: 
-2. Extremely skewed data
+1. The type of gross is not standardised, e.g
+2. Large proportion of null values
+3. Budget needed to be adjusted for inflation  
+4. Extremely skewed data
    - Facebook likes data:
      - solution: use log transform 
+5. Random Forest took a very long time to load 
+6. Extremely low Linear Regression Correlation  
+   - solution: 
+7. Genres and Plot keywords came 
    
 
-
+Extras: 
+- Standardising budget to 2016 inflation rate as the latest movies only go up to 2016 
+- Web scraping 
+- Visualisations:
+ - 3D scatter plot 
+ - Word Cloud 
+- Machine Learning: 
+ - K-modes & K-means 
+ - Logistic Regression 
+ - Random Forest 
+  - Feature Importance 
 
 
 
