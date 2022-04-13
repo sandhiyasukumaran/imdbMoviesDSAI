@@ -11,6 +11,7 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
 ## Foreword
 - Sections/ Texts that are highlighted are additional/ extra materials that we learnt outside of our course. 
 
+## Motivation 
 
 ## Content Section 
 - Introduction 
@@ -44,7 +45,7 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
 
 
   #### Train:Test:Validation 
-  We split our dataset into 80:10:10 ratio 
+  We split our dataset into 80:20 ratio, then used the 80% as our Train Dataset to further divide to obtain our Train: Validate for our Machine Learning Models 
   
   
   #### Cleaning the Train Dataset
@@ -91,7 +92,15 @@ Through research, we found that:
 6. Extremely low Linear Regression Correlation  
    - solution: 
 7. Genres and Plot keywords came 
+
+# Machine Learning 
+1. Linear Regression 
+2. Logistic Regression 
+3. K-Modes 
+4. K-Means 
+5. Random Forest (Main)
    
+# Results 
 
 Extras: 
 - Standardising budget to 2016 inflation rate as the latest movies only go up to 2016 
@@ -104,6 +113,11 @@ Extras:
  - Logistic Regression 
  - Random Forest 
   - Feature Importance 
+ - Metrics
+
+# Limitations and Discussion:
 
 
+## References 
+- 
 
