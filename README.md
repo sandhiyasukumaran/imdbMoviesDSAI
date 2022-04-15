@@ -2,6 +2,14 @@
 
 by tripleH 
 
+### Contributors:
+* Sand***h***iya Sukuraman 
+* Ko***h*** Zhi En
+* Yap S***h***en Hwei [@imaginaryBuddy](https://github.com/imaginaryBuddy)
+</n>
+
+![source: bespeaking.com](https://www.bespeaking.com/wp-content/uploads/2019/09/Movie-vocab.jpg)
+  
 Hello, we are Year 1 CS Students from NTU! Welcome to our project for the course : Data Science and Artificial Intelligence 
 
 Our project is based on IMDB 5000 dataset found on [kaggle](https://www.kaggle.com/datasets/carolzhangdc/imdb-5000-movie-dataset)
@@ -99,10 +107,13 @@ Through research, we found that:
 3. K-Modes 
 4. K-Means 
 5. Random Forest (Main)
-   
+
+
+# Interesting Observations 
+
 # Results 
 
-Extras: 
+# Beyond our Course: 
 - Standardising budget to 2016 inflation rate as the latest movies only go up to 2016 
 - Web scraping 
 - Visualisations:
@@ -110,7 +121,8 @@ Extras:
  - Word Cloud 
 - Machine Learning: 
  - K-modes & K-means 
- - Logistic Regression 
+ - Logistic Regression
+    - Scaler from sklearn 
  - Random Forest 
   - Feature Importance 
  - Metrics
