@@ -185,5 +185,12 @@ Here are the results !
 
 
 ## References 
-- 
+- https://aarya1995.github.io/
+- https://www.kaggle.com/code/carolzhangdc/predict-imdb-score-with-data-mining-algorithms
+- https://www.kaggle.com/code/niklasdonges/end-to-end-project-with-python/notebook
+- https://medium.com/@kohlishivam5522/understanding-a-classification-report-for-your-machine-learning-model-88815e2ce397
+- https://www.analyticsvidhya.com/blog/2020/03/one-hot-encoding-vs-label-encoding-using-scikit-learn/
+- http://rstudio-pubs-static.s3.amazonaws.com/342210_7c8d57cfdd784cf58dc077d3eb7a2ca3.html#conclusion
+- https://scikit-learn.org/stable/modules/impute.html
+- https://www.datacamp.com/community/tutorials/wordcloud-python
 
