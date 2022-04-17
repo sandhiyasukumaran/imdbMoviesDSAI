@@ -24,9 +24,13 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
 ## Content Section 
 - Introduction 
 - Steps: 
-  - 1 :  [Looking at the Dataset](#step-1-looking-at-the-dataset)
-  - 2 : [Choosing our Variables](#step-2-choosing-our-variables)
-  - 3 : [Our Hypotheses](#step-3-our-hypotheses)
+  - 1 : [Looking at the Dataset](#step-1-looking-at-the-dataset)
+  - 2 : [EDA] (#eda) 
+    - [Uni-variate EDA] (#uni-variate-eda)
+    - [Bi-variate EDA] (#bi-variate-eda)
+    - [Multi-variate EDA] (#multi-variate-eda)
+  - 3 : [Choosing our Variables](#step-3-choosing-our-variables)
+  - 4 : [Our Hypotheses](#step-3-our-hypotheses)
 - [Challenges Faced](#challenges-faced)
 
 ## Step 1: Looking at the Dataset
@@ -48,37 +52,52 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
 |cast\_total_facebook_likes|int64||movie\_facebook_likes|int64|
 
   #### Dataset info: 
-  dimensions ->
-  null vals -> 
+  
 
 
   #### Train:Test:Validation 
-  We split our dataset into 80:20 ratio, then used the 80% as our Train Dataset to further divide to obtain our Train: Validate for our Machine Learning Models 
+  We split our dataset into 80:20 ratio, then used the 80% as our Train Dataset to further divide to obtain our Train: Validate for our Machine Learning Models in 80 : 20 ratio. 
   
   
   #### Cleaning the Train Dataset
   - drop_duplicates()
-
+  
   #### Initial Thoughts 
   - popularity of cast,
-## Step 2: Choosing our variables 
+## Step 3: Choosing our variables 
 
 Our ultimate goal is to find out what we should focus on to make our movie successful.
 
 We define success based on: 
-- monetary gains (read [**Challenges Faced**](#challenges-faced) section)
-   - `gross`
-   - `profit margin` 
 - ratings 
    - `imdb_score`
-- popularity
-   - `num_critic_for_reviews`
-   - `num_user_for_reviews`
-   - `num_voted_users`
-   - `movie_facbook_likes`
+initially, we wanted to use `gross` as a predictor of success as well, however, we faced some challenges due to inconsistent data [view challenges faced section](#challenges-faced)
    
+## Step 2: EDA
+In this section, we will look at univariate and bivariate EDAs concerning the respective variables. 
+ 
+### 1. director_name
+these are the most frequently appeared directors. 
+
+|director_name|count|
+|---|---|
+|Steven Spielberg|22|
+|Woody Allen|18|
+|Clint Eastwood|17|
+|Spike Lee |15|
+|Ridley Scott |15|
+|Martin Scorsese|15|
+|Steven Soderbergh|12|
+|Renny Harlin  |12|
+|Robert Zemeckis  |12|
+ 
+It is interesting to note that Steven Spielberg is also one of directors from the [Top20 performing movies](###What-are-the-personalities-of-directors-of-top-performing-movies?)
 
 
+### 2. num_critic_for_reviews 
+there is no significant linear correlation. 
+
+### 3. 
 ## Step 3: Our hypotheses 
 After doing Univariate EDA, and Bivariate EDA, we have chosen particular variables as our potential predictors of success. These are: 
 
@@ -110,6 +129,41 @@ Through research, we found that:
 
 
 # Interesting Observations 
+# Interesting Questions 
+### Does the movie title length affect imdb scores? 
+Unfortunately, as much as we wanted to see some correlation, our bivariate EDA tells us that there isn't any correlation. See the boxplot below! 
+However though, there is a somewhat normal distribution in the data, with a median length of 13 
+![distribution of title_length](https://user-images.githubusercontent.com/81760484/163716854-952900d4-3d06-4663-a46a-fbc05ccea7d3.png)
+
+![title_length vs imdb_goodbad](https://user-images.githubusercontent.com/81760484/163716860-90a62849-47be-415a-a393-78ba62124d43.png)
+![title_length vs imdb_cat](https://user-images.githubusercontent.com/81760484/163716865-4f491560-15e5-4f92-b431-aa53e2110eb0.png)
+
+### What are the personalities of directors of top performing movies? 
+We looked into the Top20 imdb_score movies and searched for their personalities online. 
+Here are the results ! 
+|index|director\_name|personality type|
+|---|---|---|
+|0|Frank Darabont| INFP |
+|1|Francis Ford Coppola| INTJ |
+|2|John Stockwell| INFP |
+|3|Christopher Nolan| INTJ |
+|4|Francis Ford Coppola| INTJ |
+|5|Peter Jackson| ENFJ |
+|6|Sergio Leone| NA | 
+|7|Steven Spielberg| ISFP |
+|8|Quentin Tarantino| ENTP | 
+|9|Robert Zemeckis| ENFP | 
+|10|David Fincher| INTJ | 
+|11|Christopher Nolan| INTJ |
+|12|Peter Jackson| ENFP | 
+|13|Irvin Kershner| INTP | 
+|14|Mitchell Altieri| NA | 
+|15|Lana Wachowski| ENFP |
+|16|Cary Bell| NA |
+|17|Fernando Meirelles| INFP |
+|18|Milos Forman| INTP |
+|19|Akira Kurosawa| INFJ |
+
 
 # Results 
 
