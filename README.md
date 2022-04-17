@@ -4,7 +4,7 @@ by tripleH
 
 ### Contributors:
 * Sand***h***iya Sukuraman 
-* Ko***h*** Zhi En
+* Ko***h*** Zhi En [@zex3](https://github.com/zex3)
 * Yap S***h***en Hwei [@imaginaryBuddy](https://github.com/imaginaryBuddy)
 </n>
 
@@ -20,6 +20,7 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
 - Sections/ Texts that are highlighted are additional/ extra materials that we learnt outside of our course. 
 
 ## Motivation 
+- Give directors a better estimation on how to maximize the success rate of their movie
 
 ## Content Section 
 - Introduction 
@@ -94,10 +95,25 @@ these are the most frequently appeared directors.
 It is interesting to note that Steven Spielberg is also one of directors from the [Top20 performing movies](###What-are-the-personalities-of-directors-of-top-performing-movies?)
 
 
+
 ### 2. num_critic_for_reviews 
 there is no significant linear correlation. 
 
-### 3. 
+### 3. duration 
+- we binned the `imdb_score` into categories to form `score_cat`
+- there seems to be slight correlation based on the boxplot between `duration` and `score_cat`
+![duration eda](https://user-images.githubusercontent.com/81760484/163723231-f0a5995b-82c9-4a50-ab68-696089f279b5.png)
+![duration vs score](https://user-images.githubusercontent.com/81760484/163723346-65235c7f-2ffb-4581-93e4-261db7619378.png)
+
+### . budget 
+We decided to use only movies produced in the USA, so we could standardize the budget based on CPI (referenced: ) 
+```python
+
+```
+
+### 4.
+
+### 5. 
 ## Step 3: Our hypotheses 
 After doing Univariate EDA, and Bivariate EDA, we have chosen particular variables as our potential predictors of success. These are: 
 
@@ -134,7 +150,6 @@ Through research, we found that:
 Unfortunately, as much as we wanted to see some correlation, our bivariate EDA tells us that there isn't any correlation. See the boxplot below! 
 However though, there is a somewhat normal distribution in the data, with a median length of 13 
 ![distribution of title_length](https://user-images.githubusercontent.com/81760484/163716854-952900d4-3d06-4663-a46a-fbc05ccea7d3.png)
-
 ![title_length vs imdb_goodbad](https://user-images.githubusercontent.com/81760484/163716860-90a62849-47be-415a-a393-78ba62124d43.png)
 ![title_length vs imdb_cat](https://user-images.githubusercontent.com/81760484/163716865-4f491560-15e5-4f92-b431-aa53e2110eb0.png)
 
@@ -164,7 +179,7 @@ Here are the results !
 |18|Milos Forman| INTP |
 |19|Akira Kurosawa| INFJ |
 
-
+Observations: all of them have "N" in their personalities, which is the intuitive element. 
 # Results 
 
 # Beyond our Course: 
@@ -182,7 +197,8 @@ Here are the results !
  - Metrics
 
 # Limitations and Discussion:
-
+1. Analysis of personalities of the directors may be biased because they may be classified as those personalities based on their careers. Therefore, it may not be an accurate representation. However, it is still interesting to note their personalities! 
+2. 
 
 ## References 
 - https://aarya1995.github.io/
