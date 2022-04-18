@@ -2,6 +2,7 @@
 
 by tripleH 
 
+
 ### Contributors:
 * Sand***h***iya Sukuraman 
 * Ko***h*** Zhi En [@zex3](https://github.com/zex3)
@@ -179,7 +180,7 @@ Here are the results !
 |18|Milos Forman| INTP |
 |19|Akira Kurosawa| INFJ |
 
-Observations: all of them have "N" in their personalities, which is the intuitive element. 
+Observations: almost all of them (except for one - Steven Spielberg) have "N" in their personalities, which is the intuitive element. 
 # Results 
 
 # Beyond our Course: 
@@ -198,7 +199,29 @@ Observations: all of them have "N" in their personalities, which is the intuitiv
 
 # Limitations and Discussion:
 1. Analysis of personalities of the directors may be biased because they may be classified as those personalities based on their careers. Therefore, it may not be an accurate representation. However, it is still interesting to note their personalities! 
-2. Further analysis can be made on other measures of success such as variables that indicate popularity e.g: `num_critic_for_reviews`, `num_voted_users`, `director_facebook_likes`. 
+2. Further analysis can be done on other variables that indicate success through popularity or movie like `director_facebook_likes`, `num_critic_for_reviews`, `num_voted_users` 
+3. Our dataset is quite imbalanced and skewed, therefore a larger dataset may help. 
+
+
+## Workload Delegation: 
+1. Koh Zi En 
+  - ML : KModes, KMeans, Random Forest 
+  - Presentation 
+  - Exploratory Data Analysis
+  - Data Visualisation 
+2. Sandhiya Sukuraman 
+  - ML : Decision Tree, Linear Regression 
+  - Presentation 
+  - EDA 
+  - Data Visualisation 
+3. Yap Shen Hwei 
+  - ML : Logistic Regression
+  - Presentation 
+  - Exploratory Data Analysis 
+  - Github READMe 
+## Our Video : 
+
+[![Alt text](https://user-images.githubusercontent.com/81760484/163825344-c985b805-d06b-4934-98ff-c517a6541d48.png)](https://youtu.be/CTV7WypIIf0)
 
 ## References 
 - https://aarya1995.github.io/
@@ -209,5 +232,4 @@ Observations: all of them have "N" in their personalities, which is the intuitiv
 - http://rstudio-pubs-static.s3.amazonaws.com/342210_7c8d57cfdd784cf58dc077d3eb7a2ca3.html#conclusion
 - https://scikit-learn.org/stable/modules/impute.html
 - https://www.datacamp.com/community/tutorials/wordcloud-python
-- https://openclassrooms.com/en/courses/5869986-perform-an-exploratory-data-analysis/6177861-analyze-the-results-of-a-k-means-clustering#:~:text=Interpreting%20the%20meaning%20of%20k,of%20what%20each%20cluster%20represents.
 
