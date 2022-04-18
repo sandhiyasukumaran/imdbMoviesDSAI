@@ -209,4 +209,5 @@ Observations: all of them have "N" in their personalities, which is the intuitiv
 - http://rstudio-pubs-static.s3.amazonaws.com/342210_7c8d57cfdd784cf58dc077d3eb7a2ca3.html#conclusion
 - https://scikit-learn.org/stable/modules/impute.html
 - https://www.datacamp.com/community/tutorials/wordcloud-python
+- https://openclassrooms.com/en/courses/5869986-perform-an-exploratory-data-analysis/6177861-analyze-the-results-of-a-k-means-clustering#:~:text=Interpreting%20the%20meaning%20of%20k,of%20what%20each%20cluster%20represents.
 
