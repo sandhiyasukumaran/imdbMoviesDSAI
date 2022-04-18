@@ -198,7 +198,7 @@ Observations: all of them have "N" in their personalities, which is the intuitiv
 
 # Limitations and Discussion:
 1. Analysis of personalities of the directors may be biased because they may be classified as those personalities based on their careers. Therefore, it may not be an accurate representation. However, it is still interesting to note their personalities! 
-2. 
+2. Further analysis can be made on other measures of success such as variables that indicate popularity e.g: `num_critic_for_reviews`, `num_voted_users`, `director_facebook_likes`. 
 
 ## References 
 - https://aarya1995.github.io/
