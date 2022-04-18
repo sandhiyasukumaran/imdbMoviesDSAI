@@ -1,6 +1,6 @@
-# How to Maximise Movie Success - Project Overview
+# How to Maximise Movie Success - Project Overview <construction in progress, pls come back after 23 APR!>
 
-by tripleH 
+**by tripleH**
 
 
 ### Contributors:
@@ -27,10 +27,13 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
 - Introduction 
 - Steps: 
   - 1 : [Looking at the Dataset](#step-1-looking-at-the-dataset)
+  - 2 : Data Extraction & Cleaning
   - 2 : [EDA] (#eda) 
     - [Uni-variate EDA] (#uni-variate-eda)
     - [Bi-variate EDA] (#bi-variate-eda)
     - [Multi-variate EDA] (#multi-variate-eda)
+  - 3 : Machine Learning 
+  - Conclusions and Observations 
   - 3 : [Choosing our Variables](#step-3-choosing-our-variables)
   - 4 : [Our Hypotheses](#step-3-our-hypotheses)
 - [Challenges Faced](#challenges-faced)
@@ -53,19 +56,36 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
 |num\_voted_users|int64||aspect\_ratio|float64|
 |cast\_total_facebook_likes|int64||movie\_facebook_likes|int64|
 
-  #### Dataset info: 
-  
+### Our hypotheses : 
+- Duration will not affect IMDB scores
+- Variables related to popularity will have positive correlation with IMDB score
+- Budget will affect IMDB score
 
 
+ ## Step 2: Data Extraction & Data Cleaning 
   #### Train:Test:Validation 
   We split our dataset into 80:20 ratio, then used the 80% as our Train Dataset to further divide to obtain our Train: Validate for our Machine Learning Models in 80 : 20 ratio. 
   
   
   #### Cleaning the Train Dataset
-  - drop_duplicates()
   
-  #### Initial Thoughts 
-  - popularity of cast,
+  1. Issue with gross
+     - We found out that `gross` was not standardized, as the dataset contained different types of `gross` for each movie.  (e.g: opening week gross, US&Canada Gross etc.)
+     - An example of disparities between the types of gross: 
+      ![gross](https://user-images.githubusercontent.com/81760484/163833790-a99fc1ac-5a63-47be-a33e-7665f4d3f9fc.png)
+  2. Issue with budget 
+     - Needed to standardize budget base on 2016 inflation rates. 
+  3. Null Values 
+     - When # of null values are small for the variable, we dropped them. 
+     - Otherwise, for numerical data, we replaced them with median in scenarios such as during Machine Learning. 
+     - For categorical data, we dropped the rows. 
+  4. Train:Validate:Test
+     - We followed the Train:Validate:Test scheme  
+     - Split Train:Test in 80:20 ratio 
+     - Used Train as our EDA 
+     - Further split Train into Train:Validate in 80:20 ratio for Machine Learning 
+  
+ 
 ## Step 3: Choosing our variables 
 
 Our ultimate goal is to find out what we should focus on to make our movie successful.
