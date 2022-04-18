@@ -106,11 +106,74 @@ there is no significant linear correlation.
 ![duration eda](https://user-images.githubusercontent.com/81760484/163723231-f0a5995b-82c9-4a50-ab68-696089f279b5.png)
 ![duration vs score](https://user-images.githubusercontent.com/81760484/163723346-65235c7f-2ffb-4581-93e4-261db7619378.png)
 
-### . budget 
-We decided to use only movies produced in the USA, so we could standardize the budget based on CPI (referenced: ) 
+### 4. budget 
+We decided to use only movies produced in the USA, so we could standardize the budget based on CPI (referenced: https://aarya1995.github.io/) 
+
+We performed web scraping using BeautifulSoup 
 ```python
 
+from bs4 import BeautifulSoup
+import requests
+url = "https://www.usinflationcalculator.com/inflation/consumer-price-index-and-annual-percent-changes-from-1913-to-2008/"
+
+r = requests.get(url)
+data = r.text
+soup = BeautifulSoup(data, 'html.parser')
+
+table = soup.find('table')
+rows = table.tbody.findAll('tr');
+
+years = []
+cpis = []
 ```
+``` python
+for row in rows:
+    year = row.findAll('td')[0].get_text()
+    if year.isdigit() and int(year) < 2017:
+        years.append(int(year))
+        cpis.append(float(row.findAll('td')[13].get_text()))
+
+cpi_table = pd.DataFrame({
+    "year": years,
+    "avg_annual_cpi": cpis
+})
+
+cpi_table.tail()
+```
+``` python 
+# replace na values with 0
+imdbData["budget"].fillna(0, inplace = True)
+imdbData["title_year"].fillna(0, inplace = True)
+
+# only consider movies made in the USA. Drop all other rows
+imdbData = imdbData[imdbData['country'].str.contains('USA') == True]
+
+imdbData.drop(imdbData[(imdbData["budget"] == 0) | (imdbData["title_year"] == 0)].index, inplace=True)
+```
+```python
+CPI_2016 = float(cpi_table[cpi_table['year'] == 2016]['avg_annual_cpi'])
+real_budget_values = []
+
+# must transform gross and budget values into real 2016 dollar terms
+for index, row in imdbData.iterrows():
+    budget = row['budget']
+    year = row['title_year']
+    cpi = float(cpi_table[cpi_table['year'] == int(year)]['avg_annual_cpi'])
+    
+    real_budget = get_real_value(budget, cpi, CPI_2016)
+    real_budget_values.append(real_budget)   
+
+# place the converted budget values into the original budget column
+imdbData["budget"] = real_budget_values
+```
+**budget vs imdb_score**
+
+Initially, we couldn't really see any pattern with only 2 and 4 imdb_score bins. 
+So we split into 5 bins and saw a clearer picture. 
+It does seem like higher budget can influence imdb_score. However, for the "horrendous" category, it seems like the budget used on them is higher. This could mean that although budget does follow a certain trend as imdb_score increases, we ought to be careful with our budget as there is still a risk of the movie turning out to be "horrendous" 
+
+![budget_vs_imdb_score](https://user-images.githubusercontent.com/81760484/163830896-41f5615a-ab65-498c-85d1-292c307c58ee.png)
+
 
 ### 4.
 
