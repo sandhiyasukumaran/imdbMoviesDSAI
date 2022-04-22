@@ -465,7 +465,7 @@ Generally, based on our EDA, movies with the following attributes will do better
   - Presentation 
   - Exploratory Data Analysis
   - Data Visualisation 
-2. Sandhiya Sukuraman 
+2. Sandhiya Sukumaran 
   - ML : Random Forest, Linear Regression 
   - Presentation 
   - EDA 
