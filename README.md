@@ -463,7 +463,7 @@ Generally, based on our EDA, movies with the following attributes will do better
 1. Koh Zi En 
   - ML : KMeans, Decision Tree 
   - Presentation 
-  - Exploratory Data Analysis
+  - EDA
   - Data Visualisation 
 2. Sandhiya Sukumaran 
   - ML : Random Forest, Linear Regression 
@@ -473,14 +473,14 @@ Generally, based on our EDA, movies with the following attributes will do better
 3. Yap Shen Hwei 
   - ML : Logistic Regression
   - Presentation 
-  - Exploratory Data Analysis 
-  - Github READMe 
+  - EDA
+  - Github 
 
-## Our Video : 
+# Our Video: 
 
 [![Alt text](https://user-images.githubusercontent.com/81760484/163825344-c985b805-d06b-4934-98ff-c517a6541d48.png)](https://youtu.be/CTV7WypIIf0)
 
-# References 
+# References:
 - https://aarya1995.github.io/
 - https://www.kaggle.com/code/carolzhangdc/predict-imdb-score-with-data-mining-algorithms
 - https://www.kaggle.com/code/niklasdonges/end-to-end-project-with-python/notebook
