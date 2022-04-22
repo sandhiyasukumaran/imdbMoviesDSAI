@@ -340,6 +340,7 @@ The list of models we used were:
 ### K-Means 
 K-means is an unsupervised machine learning model. 
 We found out that the optimal number of clusters is 3 (using elbow method) 
+
 <img src="https://user-images.githubusercontent.com/81760484/164647997-d473b284-c84b-4281-a6ac-555285d8ec2d.png" width="550" height="400">
 
 The 2-D Grid, Parallel Coordinates Plot and Boxplot all show that `budget` is a huge determinant in influencing the split between the clusters! 
