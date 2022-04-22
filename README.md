@@ -308,8 +308,8 @@ We explored several ML Models, the best-performing ML Model for our dataset turn
 The list of models we used were: 
 1. Linear Regression 
 2. Logistic Regression 
-3. K-Modes 
-4. K-Means 
+3. K-Means 
+4. Decision Tree
 5. Random Forest (Main)
 
 ### Linear Regression 
@@ -461,7 +461,7 @@ Generally, based on our EDA, movies with the following attributes will do better
 
 # Workload Delegation: 
 1. Koh Zi En 
-  - ML : KModes, KMeans, Decision Tree 
+  - ML : KMeans, Decision Tree 
   - Presentation 
   - Exploratory Data Analysis
   - Data Visualisation 
