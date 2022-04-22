@@ -6,6 +6,10 @@
 * Yap S***h***en Hwei [@imaginaryBuddy](https://github.com/imaginaryBuddy)
 </n>
 
+## Codes are in: 
+[imdbFullAnalysis](https://github.com/imaginaryBuddy/imdbMoviesDSAI/blob/main/imdbFullAnalysis.ipynb)
+[answeringInterestingQuestions](https://github.com/imaginaryBuddy/imdbMoviesDSAI/blob/main/answeringInterestingQues.ipynb)
+
 ![source: bespeaking.com](https://www.bespeaking.com/wp-content/uploads/2019/09/Movie-vocab.jpg)
   
 Hello, we are Year 1 CS Students from NTU! Welcome to our project for the course : Data Science and Artificial Intelligence 
