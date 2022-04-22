@@ -1,9 +1,6 @@
-# How to Maximise Movie Success - Project Overview <construction in progress, pls come back after 23 APR!>
+# How to Maximise Movie Success - Project Overview 
 
-**by tripleH**
-
-
-### Contributors:
+## Contributors: tripleH group 
 * Sand***h***iya Sukuraman 
 * Ko***h*** Zhi En [@zex3](https://github.com/zex3)
 * Yap S***h***en Hwei [@imaginaryBuddy](https://github.com/imaginaryBuddy)
@@ -20,23 +17,29 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
 ## Foreword
 - Sections/ Texts that are highlighted are additional/ extra materials that we learnt outside of our course. 
 
-## Motivation 
-- Give directors a better estimation on how to maximize the success rate of their movie
+
 
 ## Content Section 
 - Introduction 
+  - Problem Statement 
+  - Motivation
 - Steps: 
   - 1 : [Looking at the Dataset](#step-1-looking-at-the-dataset)
+    - Our Hypotheses 
   - 2 : Data Extraction & Cleaning
-  - 2 : [EDA] (#eda) 
-    - [Uni-variate EDA] (#uni-variate-eda)
-    - [Bi-variate EDA] (#bi-variate-eda)
-    - [Multi-variate EDA] (#multi-variate-eda)
   - 3 : Machine Learning 
   - Conclusions and Observations 
-  - 3 : [Choosing our Variables](#step-3-choosing-our-variables)
-  - 4 : [Our Hypotheses](#step-3-our-hypotheses)
 - [Challenges Faced](#challenges-faced)
+
+## Introduction 
+Have you ever wondered why some movies are more successful than others? If you're a movie director, you've came to the right place! If you are not a movie director, of course, you can still read on to find out more!
+  ### Problem Statement 
+   > Identify which features contribute to the success of a movie.
+
+  ### Motivation 
+   > Give directors a better estimation on how to maximize the success rate of their movie
+  
+  
 
 ## Step 1: Looking at the Dataset
 |variable|dtype||variable|dtype|
@@ -56,6 +59,8 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
 |num\_voted_users|int64||aspect\_ratio|float64|
 |cast\_total_facebook_likes|int64||movie\_facebook_likes|int64|
 
+There are a total of 28 variables. 
+
 ### Our hypotheses : 
 - Duration will not affect IMDB scores
 - Variables related to popularity will have positive correlation with IMDB score
@@ -69,35 +74,57 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
   
   #### Cleaning the Train Dataset
   
-  1. Issue with gross
+  1. Issue with `gross`
      - We found out that `gross` was not standardized, as the dataset contained different types of `gross` for each movie.  (e.g: opening week gross, US&Canada Gross etc.)
      - An example of disparities between the types of gross: 
       ![gross](https://user-images.githubusercontent.com/81760484/163833790-a99fc1ac-5a63-47be-a33e-7665f4d3f9fc.png)
-  2. Issue with budget 
-     - Needed to standardize budget base on 2016 inflation rates. 
+  2. Issue with `budget` 
+     - Different movies from different countries had different currencies for their budget. 
+     - Since the proportion of movies from other countries (besides US) was quite small, we decided to drop them. 
+     - We only used movies from USA.
+     - Needed to standardize budget base on 2016 inflation rates in the US. 
   3. Null Values 
      - When # of null values are small for the variable, we dropped them. 
      - Otherwise, for numerical data, we replaced them with median in scenarios such as during Machine Learning. 
      - For categorical data, we dropped the rows. 
-  4. Train:Validate:Test
-     - We followed the Train:Validate:Test scheme  
+  4. Train : Validate : Test
+     - We followed the Train : Validate : Test scheme  
      - Split Train:Test in 80:20 ratio 
      - Used Train as our EDA 
      - Further split Train into Train:Validate in 80:20 ratio for Machine Learning 
+  5. Binning `imdb_scores` 
+     - We wanted to observe the correlation not just in a numerical manner but also in a categorical manner. 
+     - Besides, since we couldn't really find any strong linear correlation (as you will read later on), we figured that it would be beneficial to split `imdb_score` into categories. 
+
+```python
+  # Bins to categorise the imdb_score ranges
+
+  # Multi bins
+  imdb_bins = [0, 3, 5, 7, 10]
+  imdb_labels = ["horrendous", "ok", "good", "very good"]
+
+  # Binary bins
+  # 6.5 = 1-6.5 (Bad) 10 = 6.6-10 (Good)
+  bins = (2, 6.5, 10)
+
+```
+
+---
+  > **TLDR:**
+  > * we only used movies from the US, and standardised the budget based on 2016 inflation rates.
+  > * used Train : Validate : Test scheme
+  > * removed gross entirely due to inconsistency 
+  > * we binned the `imdb_score` into categories, and tried out different bins. 
+---
   
- 
-## Step 3: Choosing our variables 
 
-Our ultimate goal is to find out what we should focus on to make our movie successful.
-
-We define success based on: 
-- ratings 
-   - `imdb_score`
-initially, we wanted to use `gross` as a predictor of success as well, however, we faced some challenges due to inconsistent data [view challenges faced section](#challenges-faced)
-   
 ## Step 2: EDA
-In this section, we will look at univariate and bivariate EDAs concerning the respective variables. 
- 
+In this section, we will look at univariate and bivariate EDAs concerning more significant/ interesting variables. 
+
+
+### Choosing our response variable 
+We have chosen `imdb_score` as our main response variable, for simplicity purposes. Initally, we wanted to use `gross`, but due to disparities, we decided not to.  
+
 ### 1. director_name
 these are the most frequently appeared directors. 
 
@@ -118,74 +145,113 @@ It is interesting to note that Steven Spielberg is also one of directors from th
 
 
 ### 2. num_critic_for_reviews 
-there is no significant linear correlation. 
+- a large proportion of movies receive close to 0 num_critic_for_reviews. 
+- there is no significant linear correlation bewteen `num_critic_for_reviews` and `imdb_score`
+- the table below shows the movies sorted based on their `num_critic_for_reviews`, it does seem to show that `imdb_score` falls in a range of > 7.0 for these 20 movies. 
+- ![num_critic_for_reviews table](https://user-images.githubusercontent.com/81760484/164614696-af410798-eccc-4905-bb27-2767d2360f90.png)
+- to be fair, it may be that there is some sort of indication for imdb_score based on num_critic_for_reviews (as shown on the table), perhaps due to the large proportion of data receiving close to 0 reviews, we couldn't observe a linear correlation. 
 
 ### 3. duration 
+**duration vs imdb_score**
 - we binned the `imdb_score` into categories to form `score_cat`
 - there seems to be slight correlation based on the boxplot between `duration` and `score_cat`
 ![duration eda](https://user-images.githubusercontent.com/81760484/163723231-f0a5995b-82c9-4a50-ab68-696089f279b5.png)
 ![duration vs score](https://user-images.githubusercontent.com/81760484/163723346-65235c7f-2ffb-4581-93e4-261db7619378.png)
 
-### 4. budget 
+### 4. director_facebook_likes
+- was extremely right-skewed even after removing the outliers. 
+- skew datas are not unexpected in our project as success is highly dependent on the definition of outliers. (those movies that succeed are outliers) 
+- here's the plots after removing outliers:
+- ![dir_facebook_likes_distribution](https://user-images.githubusercontent.com/81760484/164615445-95c745ba-65ae-448a-9e0b-a0a3ebbc021b.png)
+- due to the skew structure, we used log transform to visualise the data. Log transforming resulted in a binomial distribition, suggesting that there may be two groups of distribution. 
+- ![dir_facebook_likes_distribution_log](https://user-images.githubusercontent.com/81760484/164615674-2bdea061-8d18-4e8e-a916-abc810d63a92.png)
+
+**director_facebook_likes vs imdb_score**
+
+Although it can't be confirmed that there is a correlation between them, the boxplots shows that the median values of imdb_score do vary for the different categories. 
+
+![dir_likes_vs_imdb_score](https://user-images.githubusercontent.com/81760484/164624848-2f4563c1-d2b9-4220-981d-ff776b5574e2.png)
+
+
+### 5. actor_name 
+We concatenated data from `actor_1_name`, `actor_2_name` and `actor_3_name`. Here are the top20 most frequently appeared actors/actresses! 
+Any names that you know of? 
+
+|actor\_name|num of appearances| |actor\_name|num of appearances|
+|---|---|---|---|---|
+|Robert De Niro|36||Matthew McConaughey|21|
+|Bruce Willis|30||Harrison Ford|21|
+|Morgan Freeman|29||Robert Downey Jr\.|21|
+|Steve Buscemi|26||James Franco|20|
+|Johnny Depp|26||Brad Pitt|20|
+|Will Ferrell|26||Matt Damon|20|
+|Bill Murray|24||Sylvester Stallone|19|
+|Denzel Washington|23||Meryl Streep|19|
+|Nicolas Cage|22||Robin Williams|19|
+|J\.K. Simmons|21||Julia Roberts|19|
+
+
+### 6. genres 
+We had to split the strings into individual genres. 
+
+![Screenshot 2022-04-22 at 2 56 12 PM](https://user-images.githubusercontent.com/81760484/164620520-6e76816f-401f-4361-a1e0-00c9c79d3a5a.png)
+
+```python
+# get the genre frequencies 
+from collections import Counter
+genreDi = Counter()
+
+for strGenre in imdb["genres"] :
+  wds = strGenre.split("|")
+  for w in wds :
+    if w in genreDi:
+      genreDi[w] = genreDi[w] + 1
+    else:
+      genreDi[w] = 1 
+
+print(genreDi)
+``` 
+
+```python 
+# convert the dictionary into pandasdataframes + sort in descending order 
+
+genreFreq = pd.DataFrame.from_records(genreDi.most_common(), columns = ["Genre", "Count"])
+
+genreFreq.head(n=10)
+```
+
+
+![genreFreq](https://user-images.githubusercontent.com/81760484/164620806-17a03280-1762-4774-a01d-5abbd2c3a51e.png)
+
+**Observations (from Uni-variate)** 
+most common genre : Drama 
+we asked ourselves, why? is it because it is the most profitable?
+this formed our hypothesis that: assuming that the movies industry follows demand and supply, there is high demand for Dramas, 
+so this genre will be the most popular with the highest ratings amongst the other genres.
+
+**genres vs mean imdb_scores**
+We calculated the mean imdb_scores for each genre. 
+The results : 
+
+&nbsp;&nbsp;&nbsp;&nbsp;![genre_vs_score](https://user-images.githubusercontent.com/81760484/164622775-e9f8010f-2613-46b5-95cb-7522ae5e9c4a.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![cat_plot](https://user-images.githubusercontent.com/81760484/164623638-6af3b9b5-e09b-49d9-a8aa-b1a7064cbca1.png)
+
+It seems that Film-Noir has the highest `imdb_score`, however, this is inaccurate, as later, we find out that there were only 5 Film-Noir movies contributing to this observation. 
+As noted here: 
+
+![genre_freq_score_count](https://user-images.githubusercontent.com/81760484/164624141-ac8d8373-3cff-4170-afb1-ffb19079eb77.png)
+
+
+### 7. budget 
 We decided to use only movies produced in the USA, so we could standardize the budget based on CPI (referenced: https://aarya1995.github.io/) 
 
-We performed web scraping using BeautifulSoup 
+We performed web scraping using BeautifulSoup to obtain CPI data. Then, we updated the budget column of the whole dataset.
 ```python
-
 from bs4 import BeautifulSoup
 import requests
-url = "https://www.usinflationcalculator.com/inflation/consumer-price-index-and-annual-percent-changes-from-1913-to-2008/"
-
-r = requests.get(url)
-data = r.text
-soup = BeautifulSoup(data, 'html.parser')
-
-table = soup.find('table')
-rows = table.tbody.findAll('tr');
-
-years = []
-cpis = []
 ```
-``` python
-for row in rows:
-    year = row.findAll('td')[0].get_text()
-    if year.isdigit() and int(year) < 2017:
-        years.append(int(year))
-        cpis.append(float(row.findAll('td')[13].get_text()))
+<img src="https://user-images.githubusercontent.com/81760484/164617316-3b00dec4-fc21-4825-b01c-8493cabe749c.png" width="300" height="300">
 
-cpi_table = pd.DataFrame({
-    "year": years,
-    "avg_annual_cpi": cpis
-})
-
-cpi_table.tail()
-```
-``` python 
-# replace na values with 0
-imdbData["budget"].fillna(0, inplace = True)
-imdbData["title_year"].fillna(0, inplace = True)
-
-# only consider movies made in the USA. Drop all other rows
-imdbData = imdbData[imdbData['country'].str.contains('USA') == True]
-
-imdbData.drop(imdbData[(imdbData["budget"] == 0) | (imdbData["title_year"] == 0)].index, inplace=True)
-```
-```python
-CPI_2016 = float(cpi_table[cpi_table['year'] == 2016]['avg_annual_cpi'])
-real_budget_values = []
-
-# must transform gross and budget values into real 2016 dollar terms
-for index, row in imdbData.iterrows():
-    budget = row['budget']
-    year = row['title_year']
-    cpi = float(cpi_table[cpi_table['year'] == int(year)]['avg_annual_cpi'])
-    
-    real_budget = get_real_value(budget, cpi, CPI_2016)
-    real_budget_values.append(real_budget)   
-
-# place the converted budget values into the original budget column
-imdbData["budget"] = real_budget_values
-```
 **budget vs imdb_score**
 
 Initially, we couldn't really see any pattern with only 2 and 4 imdb_score bins. 
@@ -195,13 +261,45 @@ It does seem like higher budget can influence imdb_score. However, for the "horr
 ![budget_vs_imdb_score](https://user-images.githubusercontent.com/81760484/163830896-41f5615a-ab65-498c-85d1-292c307c58ee.png)
 
 
-### 4.
+### 8. num_voted_users 
 
-### 5. 
-## Step 3: Our hypotheses 
-After doing Univariate EDA, and Bivariate EDA, we have chosen particular variables as our potential predictors of success. These are: 
+- Positively-skewed, large proportion had no number of voted users 
+<img src="https://user-images.githubusercontent.com/81760484/164625453-d1feef57-1c50-44ea-a3b5-eea9f8cf59a3.png" width="500" height="500">
+
+- Not much linear correlation either : with a correlation of -> 0.470567
+<img src="https://user-images.githubusercontent.com/81760484/164625754-609acd65-b334-44d5-b4e6-6a21a6842547.png" width="500" height="500">
 
 
+
+### 9. imdb_score 
+<img src="https://user-images.githubusercontent.com/81760484/164626388-4422ef1a-71de-401e-a0cd-c0ea813dc8b6.png" width="450" height="300">
+<img src="https://user-images.githubusercontent.com/81760484/164626481-f8250bfb-9b1e-49e1-a235-8545d1c0fcca.png" width="400" height="300">
+
+It seems that a large proportion has imdb score of around 5-8.
+
+The median of imdb_score is 6.5, which is the reason why we chose one of our bins to be [0. 6.6, 10] (i.e. 0-6.5 will be classfied as "bad" and 6.6-10 as "good") 
+
+
+## Step 3: Machine Learning 
+We explored several ML Models, the best-performing ML Model for our dataset turned out to be ..... Random Forest! 
+
+The list of models we used were: 
+1. Linear Regression 
+2. Logistic Regression 
+3. K-Modes 
+4. K-Means 
+5. Random Forest (Main)
+
+### Linear Regression 
+- As expected, since our dataset is highly categorically-inclined, linear regression for both bivariate and multivariate LR had low R<sup>2</sup> and MSE scores.
+- Below shows the scores of some bivariate LR that we attempted 
+- ![Picture 1](https://user-images.githubusercontent.com/81760484/164642331-dd029105-6dbe-4168-a941-46c4196f0361.png)
+
+- Multivariate LR 
+- ![Picture 2](https://user-images.githubusercontent.com/81760484/164642857-70678a7a-390f-46f9-b0c5-ea35162e182f.png)
+
+### Logistic Regression 
+- Logistic Regression showed slightly better results 
 ## Step 4: Some Interesting Questions 
 - Does the length of the title affect movie success? 
 - Are there any types of words that we should include into our movie title to increase our chances of success? 
@@ -220,15 +318,8 @@ Through research, we found that:
    - solution: 
 7. Genres and Plot keywords came 
 
-# Machine Learning 
-1. Linear Regression 
-2. Logistic Regression 
-3. K-Modes 
-4. K-Means 
-5. Random Forest (Main)
 
 
-# Interesting Observations 
 # Interesting Questions 
 ### Does the movie title length affect imdb scores? 
 Unfortunately, as much as we wanted to see some correlation, our bivariate EDA tells us that there isn't any correlation. See the boxplot below! 
@@ -248,7 +339,7 @@ Here are the results !
 |3|Christopher Nolan| INTJ |
 |4|Francis Ford Coppola| INTJ |
 |5|Peter Jackson| ENFJ |
-|6|Sergio Leone| NA | 
+|6|Sergio Leone| n/a | 
 |7|Steven Spielberg| ISFP |
 |8|Quentin Tarantino| ENTP | 
 |9|Robert Zemeckis| ENFP | 
@@ -256,15 +347,18 @@ Here are the results !
 |11|Christopher Nolan| INTJ |
 |12|Peter Jackson| ENFP | 
 |13|Irvin Kershner| INTP | 
-|14|Mitchell Altieri| NA | 
+|14|Mitchell Altieri| n/a | 
 |15|Lana Wachowski| ENFP |
-|16|Cary Bell| NA |
+|16|Cary Bell| n/a |
 |17|Fernando Meirelles| INFP |
 |18|Milos Forman| INTP |
 |19|Akira Kurosawa| INFJ |
 
 Observations: almost all of them (except for one - Steven Spielberg) have "N" in their personalities, which is the intuitive element. 
-# Results 
+
+Do you, as a movie director, have these personality traits too? 
+
+# The Big Conclusion: 
 
 # Beyond our Course: 
 - Standardising budget to 2016 inflation rate as the latest movies only go up to 2016 
@@ -286,7 +380,7 @@ Observations: almost all of them (except for one - Steven Spielberg) have "N" in
 3. Our dataset is quite imbalanced and skewed, therefore a larger dataset may help. 
 
 
-## Workload Delegation: 
+# Workload Delegation: 
 1. Koh Zi En 
   - ML : KModes, KMeans, Random Forest 
   - Presentation 
@@ -302,6 +396,7 @@ Observations: almost all of them (except for one - Steven Spielberg) have "N" in
   - Presentation 
   - Exploratory Data Analysis 
   - Github READMe 
+
 ## Our Video : 
 
 [![Alt text](https://user-images.githubusercontent.com/81760484/163825344-c985b805-d06b-4934-98ff-c517a6541d48.png)](https://youtu.be/CTV7WypIIf0)
