@@ -461,12 +461,12 @@ Generally, based on our EDA, movies with the following attributes will do better
 
 # Workload Delegation: 
 1. Koh Zi En 
-  - ML : KModes, KMeans, Random Forest 
+  - ML : KModes, KMeans, Decision Tree 
   - Presentation 
   - Exploratory Data Analysis
   - Data Visualisation 
 2. Sandhiya Sukuraman 
-  - ML : Decision Tree, Linear Regression 
+  - ML : Random Forest, Linear Regression 
   - Presentation 
   - EDA 
   - Data Visualisation 
