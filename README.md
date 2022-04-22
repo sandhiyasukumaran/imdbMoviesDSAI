@@ -26,10 +26,14 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
 - Steps: 
   - 1 : [Looking at the Dataset](#step-1-looking-at-the-dataset)
     - Our Hypotheses 
-  - 2 : Data Extraction & Cleaning
-  - 3 : Machine Learning 
-  - Conclusions and Observations 
-- [Challenges Faced](#challenges-faced)
+  - 2 : [Data Extraction & Cleaning](#step-2-data-extraction-and-data-cleaning)
+  - 3 : [Exploratory Data Analysis](#step-3-eda)
+  - 4 : [Machine Learning](#step-4-machine-learning)
+- [Interesting Questions](#interesting-questions)
+- [The Big Conclusion](#the-big-conclusion)
+- [Beyond Our Course](#beyond-our-course)
+- [Our Video](#our-video)
+- [References](#references) 
 
 ## Introduction 
 Have you ever wondered why some movies are more successful than others? If you're a movie director, you've came to the right place! If you are not a movie director, of course, you can still read on to find out more!
@@ -41,7 +45,7 @@ Have you ever wondered why some movies are more successful than others? If you'r
   
   
 
-## Step 1: Looking at the Dataset
+# Step 1: Looking at the Dataset
 |variable|dtype||variable|dtype|
 |---|---|---|---|---|
 |color|object||actor\_3_name|object|
@@ -61,13 +65,13 @@ Have you ever wondered why some movies are more successful than others? If you'r
 
 There are a total of 28 variables. 
 
-### Our hypotheses : 
-- Duration will not affect IMDB scores
-- Variables related to popularity will have positive correlation with IMDB score
-- Budget will affect IMDB score
+  ### Our hypotheses : 
+  - Duration will not affect IMDB scores
+  - Variables related to popularity will have positive correlation with IMDB score
+  - Budget will affect IMDB score
 
 
- ## Step 2: Data Extraction & Data Cleaning 
+# Step 2: Data Extraction and Data Cleaning 
   #### Train:Test:Validation 
   We split our dataset into 80:20 ratio, then used the 80% as our Train Dataset to further divide to obtain our Train: Validate for our Machine Learning Models in 80 : 20 ratio. 
   
@@ -118,7 +122,7 @@ There are a total of 28 variables.
 ---
   
 
-## Step 2: EDA
+# Step 3: EDA
 In this section, we will look at univariate and bivariate EDAs concerning more significant/ interesting variables. 
 
 
@@ -264,7 +268,7 @@ It does seem like higher budget can influence imdb_score. However, for the "horr
 ### 8. num_voted_users 
 
 - Positively-skewed, large proportion had no number of voted users 
-<img src="https://user-images.githubusercontent.com/81760484/164625453-d1feef57-1c50-44ea-a3b5-eea9f8cf59a3.png" width="800" height="500">
+<img src="https://user-images.githubusercontent.com/81760484/164625453-d1feef57-1c50-44ea-a3b5-eea9f8cf59a3.png" width="650" height="400">
 
 - Not much linear correlation either : with a correlation of -> 0.470567
 <img src="https://user-images.githubusercontent.com/81760484/164625754-609acd65-b334-44d5-b4e6-6a21a6842547.png" width="500" height="500">
@@ -291,7 +295,7 @@ From the heat map it seems like some variables affecting imdb_score ar
 - movie_facebook likes
 
 
-## Step 3: Machine Learning 
+# Step 4: Machine Learning 
 We explored several ML Models, the best-performing ML Model for our dataset turned out to be ..... Random Forest! 
 
 The list of models we used were: 
@@ -350,7 +354,7 @@ Nevertheless, since the performance was good, we decided to use dectree on our T
 
 ### Random Forest 
 
-Random Forest was the best! (Although, again, there may be slight overfitting for the same reasons as dectree) 
+Random Forest was the best! (Although, again, there may be slight overfitting for the same reasons as dectree + it took quite long to load) 
 
 Accuracies of :
 Train Data - 0.96 
@@ -359,24 +363,12 @@ Test Data - 0.99
 
 Feature importance in random forest shows how important each feature is in determining the decision the tree makes
 Below shows the feature importance for determining `imdb_score`. 
+
 ![feature important](https://user-images.githubusercontent.com/81760484/164649061-77fa421d-19e2-41c5-8cd9-6124070ec14e.png)
 
 Turned out that `num_voted_users`, `duration`, `num_user_for_reviews`, `num_critic_for_reviews` and `budget` are the top5 determinants. 
 
 It is interesting to note that the variables that indicate popularity are : `num_voted_users`, `num_user_for_reviews`, and `num_critic_for_reviews`, and it is not unexpected for them to be determinants of success (imdb_scores). 
-
-## Challenges Faced 
-Through research, we found that:
-1. The type of gross is not standardised, e.g
-2. Large proportion of null values
-3. Budget needed to be adjusted for inflation  
-4. Extremely skewed data
-   - Facebook likes data:
-     - solution: use log transform 
-5. Random Forest took a very long time to load 
-6. Extremely low Linear Regression Correlation  
-   - solution: 
-7. Genres and Plot keywords came 
 
 
 
@@ -441,10 +433,10 @@ Generally, based on our EDA, movies with the following attributes will do better
 - Standardising budget to 2016 inflation rate as the latest movies only go up to 2016 
 - Web scraping 
 - Visualisations:
- - 3D scatter plot (e.g:)
-   ![3d plot ](https://user-images.githubusercontent.com/81760484/164654026-c3df9738-bd2c-46e8-9df8-023588ae31c3.png)
- - Word Cloud 
-   ![plotkeywords](https://user-images.githubusercontent.com/81760484/164654849-ff16eddb-20ff-43c2-b2f3-9bcff4fd1a20.png)
+  - 3D scatter plot
+    - ![3d plot ](https://user-images.githubusercontent.com/81760484/164654026-c3df9738-bd2c-46e8-9df8-023588ae31c3.png)
+  - Word Cloud 
+    - ![plotkeywords](https://user-images.githubusercontent.com/81760484/164654849-ff16eddb-20ff-43c2-b2f3-9bcff4fd1a20.png)
 
 - Machine Learning: 
  - K-modes & K-means 
@@ -481,7 +473,7 @@ Generally, based on our EDA, movies with the following attributes will do better
 
 [![Alt text](https://user-images.githubusercontent.com/81760484/163825344-c985b805-d06b-4934-98ff-c517a6541d48.png)](https://youtu.be/CTV7WypIIf0)
 
-## References 
+# References 
 - https://aarya1995.github.io/
 - https://www.kaggle.com/code/carolzhangdc/predict-imdb-score-with-data-mining-algorithms
 - https://www.kaggle.com/code/niklasdonges/end-to-end-project-with-python/notebook
@@ -490,4 +482,4 @@ Generally, based on our EDA, movies with the following attributes will do better
 - http://rstudio-pubs-static.s3.amazonaws.com/342210_7c8d57cfdd784cf58dc077d3eb7a2ca3.html#conclusion
 - https://scikit-learn.org/stable/modules/impute.html
 - https://www.datacamp.com/community/tutorials/wordcloud-python
-
+- https://machinelearningmastery.com
