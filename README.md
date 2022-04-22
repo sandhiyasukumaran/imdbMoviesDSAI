@@ -264,7 +264,7 @@ It does seem like higher budget can influence imdb_score. However, for the "horr
 ### 8. num_voted_users 
 
 - Positively-skewed, large proportion had no number of voted users 
-<img src="https://user-images.githubusercontent.com/81760484/164625453-d1feef57-1c50-44ea-a3b5-eea9f8cf59a3.png" width="500" height="500">
+<img src="https://user-images.githubusercontent.com/81760484/164625453-d1feef57-1c50-44ea-a3b5-eea9f8cf59a3.png" width="800" height="500">
 
 - Not much linear correlation either : with a correlation of -> 0.470567
 <img src="https://user-images.githubusercontent.com/81760484/164625754-609acd65-b334-44d5-b4e6-6a21a6842547.png" width="500" height="500">
@@ -273,11 +273,22 @@ It does seem like higher budget can influence imdb_score. However, for the "horr
 
 ### 9. imdb_score 
 <img src="https://user-images.githubusercontent.com/81760484/164626388-4422ef1a-71de-401e-a0cd-c0ea813dc8b6.png" width="450" height="300">
-<img src="https://user-images.githubusercontent.com/81760484/164626481-f8250bfb-9b1e-49e1-a235-8545d1c0fcca.png" width="400" height="300">
+<img src="https://user-images.githubusercontent.com/81760484/164626481-f8250bfb-9b1e-49e1-a235-8545d1c0fcca.png" width="600" height="300">
 
 It seems that a large proportion has imdb score of around 5-8.
 
 The median of imdb_score is 6.5, which is the reason why we chose one of our bins to be [0. 6.6, 10] (i.e. 0-6.5 will be classfied as "bad" and 6.6-10 as "good") 
+
+## Multivariate EDA 
+![heatmap](https://user-images.githubusercontent.com/81760484/164652576-56979110-8b18-4e20-9403-3cc86f84a1d2.png)
+
+From the heat map it seems like some variables affecting imdb_score are:
+
+- num_critic_for_reviews
+- duration
+- num_voted_users
+- num_user_for_reviews
+- movie_facebook likes
 
 
 ## Step 3: Machine Learning 
@@ -299,11 +310,60 @@ The list of models we used were:
 - ![Picture 2](https://user-images.githubusercontent.com/81760484/164642857-70678a7a-390f-46f9-b0c5-ea35162e182f.png)
 
 ### Logistic Regression 
-- Logistic Regression showed slightly better results 
-## Step 4: Some Interesting Questions 
-- Does the length of the title affect movie success? 
-- Are there any types of words that we should include into our movie title to increase our chances of success? 
+- Logistic Regression showed slightly better results, however, accuracy scores were not that high either. 
+- This implies (1) decision trees would be good as there isn't a "clear cut" in the dataset, and since it performed slightly better (2) dataset may be categorically-inclined. 
+- We performed Multivariate and Multiclass Logistic Regression 
+![Picture 5](https://user-images.githubusercontent.com/81760484/164646260-88e32140-5c0e-4c76-8154-322a5c2efdec.png)
 
+
+- Extra: we used Scaler() to scale our data for logistic regression, and did see some improvements.
+  - For example, for mulvariate logR, before scaling, we had an accuracy score of : 0.51 and after scaling : 0.66 
+- Extra: we also used K-folds for logR, and also noticed some improvements 
+  - multivariate accuracy scores improved from 0.51 to 0.63
+  - multiclass accuracy scores improved from 0.65 to 0.66 (very slightly) 
+
+- Multiclass logRegression showed better scores than binomial logRegression. 
+- We also used other metrics like F1 scores and precision to observe our model. 
+
+
+### K-Means 
+K-means is an unsupervised machine learning model. 
+We found out that the optimal number of clusters is 3 (using elbow method) 
+<img src="https://user-images.githubusercontent.com/81760484/164647997-d473b284-c84b-4281-a6ac-555285d8ec2d.png" width="550" height="400">
+
+The 2-D Grid, Parallel Coordinates Plot and Boxplot all show that `budget` is a huge determinant in influencing the split between the clusters! 
+
+<img src="https://user-images.githubusercontent.com/81760484/164648027-51a1331c-df06-4a7c-9420-e5898f8ab352.png" width="500" height="500">
+<img src="https://user-images.githubusercontent.com/81760484/164648133-1a9c1421-39a0-40d2-bfd2-f9b8c470c9a6.png" width="500" height="500">
+
+<img src="https://user-images.githubusercontent.com/81760484/164648197-3e92f65c-5bd6-445e-8142-756df6bbf1e9.png">
+
+
+### Decision Tree 
+
+Train vs Validation results: had relatively good performance with 0.7 - 0.83 accuracy. This further confirms that our dataset is highly categorically inclined. However, train data had slightly better accuracy compared to validation, indicating that there may be slight overfitting issues. 
+
+Nevertheless, since the performance was good, we decided to use dectree on our Test dataset. Below shows the results. 
+
+![results on actual tree  png](https://user-images.githubusercontent.com/81760484/164649648-56195b2b-3bd9-4d36-ae67-f84a0fb0a7b5.png)
+
+
+### Random Forest 
+
+Random Forest was the best! (Although, again, there may be slight overfitting for the same reasons as dectree) 
+
+Accuracies of :
+Train Data - 0.96 
+Validation Data - 0.82 
+Test Data - 0.99 
+
+Feature importance in random forest shows how important each feature is in determining the decision the tree makes
+Below shows the feature importance for determining `imdb_score`. 
+![feature important](https://user-images.githubusercontent.com/81760484/164649061-77fa421d-19e2-41c5-8cd9-6124070ec14e.png)
+
+Turned out that `num_voted_users`, `duration`, `num_user_for_reviews`, `num_critic_for_reviews` and `budget` are the top5 determinants. 
+
+It is interesting to note that the variables that indicate popularity are : `num_voted_users`, `num_user_for_reviews`, and `num_critic_for_reviews`, and it is not unexpected for them to be determinants of success (imdb_scores). 
 
 ## Challenges Faced 
 Through research, we found that:
@@ -324,6 +384,7 @@ Through research, we found that:
 ### Does the movie title length affect imdb scores? 
 Unfortunately, as much as we wanted to see some correlation, our bivariate EDA tells us that there isn't any correlation. See the boxplot below! 
 However though, there is a somewhat normal distribution in the data, with a median length of 13 
+
 ![distribution of title_length](https://user-images.githubusercontent.com/81760484/163716854-952900d4-3d06-4663-a46a-fbc05ccea7d3.png)
 ![title_length vs imdb_goodbad](https://user-images.githubusercontent.com/81760484/163716860-90a62849-47be-415a-a393-78ba62124d43.png)
 ![title_length vs imdb_cat](https://user-images.githubusercontent.com/81760484/163716865-4f491560-15e5-4f92-b431-aa53e2110eb0.png)
@@ -360,12 +421,31 @@ Do you, as a movie director, have these personality traits too?
 
 # The Big Conclusion: 
 
+1. Our outcomes show that decision tree and random forest are the most suitable machine learning models for our data set. 
+2. This may be due to our dataset having skewed and imbalance data. Also, our dataset does not have very good linear relationships.
+3. Duration and budget of the movie are the top 5 features affecting imdb score.  
+4. Popularity of the director and cast plays a role in determining imdb score.
+5. The top 3 genres affecting imdb score is drama, comedy and action. This aligns with our bi-variate eda as drama is one of the most representation genres affecting imdb_score.
+
+So a movie director should pay close attention to the aforementioned factors. 
+
+Generally, based on our EDA, movies with the following attributes will do better on the imdb rating score:
+- Higher duration
+- Higher budget 
+- More popular director and cast 
+- Movies with the genres of drama, comedy and/or action 
+
+
+
 # Beyond our Course: 
 - Standardising budget to 2016 inflation rate as the latest movies only go up to 2016 
 - Web scraping 
 - Visualisations:
- - 3D scatter plot 
+ - 3D scatter plot (e.g:)
+   ![3d plot ](https://user-images.githubusercontent.com/81760484/164654026-c3df9738-bd2c-46e8-9df8-023588ae31c3.png)
  - Word Cloud 
+   ![plotkeywords](https://user-images.githubusercontent.com/81760484/164654849-ff16eddb-20ff-43c2-b2f3-9bcff4fd1a20.png)
+
 - Machine Learning: 
  - K-modes & K-means 
  - Logistic Regression
