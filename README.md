@@ -1,7 +1,7 @@
 # How to Maximise Movie Success - Project Overview 
 
 ## Contributors: tripleH group 
-* Sand***h***iya Sukuraman 
+* Sand***h***iya Sukumaran 
 * Ko***h*** Zhi En [@zex3](https://github.com/zex3)
 * Yap S***h***en Hwei [@imaginaryBuddy](https://github.com/imaginaryBuddy)
 </n>
