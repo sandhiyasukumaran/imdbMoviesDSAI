@@ -1,7 +1,7 @@
 # How to Maximise Movie Success - Project Overview 
 
 ## Contributors: tripleH group 
-* Sand***h***iya Sukumaran [@sandhiyaa(https://github.com/imaginaryBuddy/imdbMoviesDSAI/commits?author=sandhiyaaa)
+* Sand***h***iya Sukumaran [@sandhiyaa](https://github.com/imaginaryBuddy/imdbMoviesDSAI/commits?author=sandhiyaaa)
 * Ko***h*** Zhi En [@zex3](https://github.com/zex3)
 * Yap S***h***en Hwei [@imaginaryBuddy](https://github.com/imaginaryBuddy)
 </n>
