@@ -7,8 +7,9 @@
 </n>
 
 ## Codes are in: 
-[imdbFullAnalysis](https://github.com/imaginaryBuddy/imdbMoviesDSAI/blob/main/imdbFullAnalysis.ipynb)
-[answeringInterestingQuestions](https://github.com/imaginaryBuddy/imdbMoviesDSAI/blob/main/answeringInterestingQues.ipynb)
+1. [imdbFullAnalysis](https://github.com/imaginaryBuddy/imdbMoviesDSAI/blob/main/imdbFullAnalysis.ipynb)
+
+2. [answeringInterestingQuestions](https://github.com/imaginaryBuddy/imdbMoviesDSAI/blob/main/answeringInterestingQues.ipynb)
 
 ![source: bespeaking.com](https://www.bespeaking.com/wp-content/uploads/2019/09/Movie-vocab.jpg)
   
