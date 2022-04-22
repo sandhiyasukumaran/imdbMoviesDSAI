@@ -32,6 +32,8 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
 - [Interesting Questions](#interesting-questions)
 - [The Big Conclusion](#the-big-conclusion)
 - [Beyond Our Course](#beyond-our-course)
+- [Limitations and Discussion](#limitaions-and-discussion)
+- [Workload Delegation](#workload-delegation)
 - [Our Video](#our-video)
 - [References](#references) 
 
