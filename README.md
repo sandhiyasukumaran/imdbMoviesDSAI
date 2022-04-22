@@ -181,6 +181,8 @@ Although it can't be confirmed that there is a correlation between them, the box
 
 ![dir_likes_vs_imdb_score](https://user-images.githubusercontent.com/81760484/164624848-2f4563c1-d2b9-4220-981d-ff776b5574e2.png)
 
+However, we note that the "good" and "very good" categories had relatively larger numbers of outliers, that had larger `director_facebook_likes`, this could possibly suggest that there is some correlation if we split them into subgroups to observe. (as we recall that there is binomial distribution) 
+
 
 ### 5. actor_name 
 We concatenated data from `actor_1_name`, `actor_2_name` and `actor_3_name`. Here are the top20 most frequently appeared actors/actresses! 
