@@ -14,13 +14,10 @@ Our project is based on IMDB 5000 dataset found on [kaggle](https://www.kaggle.c
 
 We wonder, **"If we were movie directors, how could we maximise our success rates?"**
 
-## Foreword
-- Sections/ Texts that are highlighted are additional/ extra materials that we learnt outside of our course. 
-
 
 
 ## Content Section 
-- Introduction 
+- [Introduction](#introduction)
   - Problem Statement 
   - Motivation
 - Steps: 
@@ -37,12 +34,12 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
 - [Our Video](#our-video)
 - [References](#references) 
 
-## Introduction 
+# Introduction 
 Have you ever wondered why some movies are more successful than others? If you're a movie director, you've came to the right place! If you are not a movie director, of course, you can still read on to find out more!
-  ### Problem Statement 
+  ## Problem Statement 
    > Identify which features contribute to the success of a movie.
 
-  ### Motivation 
+  ## Motivation 
    > Give directors a better estimation on how to maximize the success rate of their movie
   
   
@@ -74,11 +71,12 @@ There are a total of 28 variables.
 
 
 # Step 2: Data Extraction and Data Cleaning 
-  #### Train:Test:Validation 
+
+  ## Train:Test:Validation
   We split our dataset into 80:20 ratio, then used the 80% as our Train Dataset to further divide to obtain our Train: Validate for our Machine Learning Models in 80 : 20 ratio. 
   
   
-  #### Cleaning the Train Dataset
+  ## Cleaning the Train Dataset
   
   1. Issue with `gross`
      - We found out that `gross` was not standardized, as the dataset contained different types of `gross` for each movie.  (e.g: opening week gross, US&Canada Gross etc.)
@@ -485,3 +483,4 @@ Generally, based on our EDA, movies with the following attributes will do better
 - https://scikit-learn.org/stable/modules/impute.html
 - https://www.datacamp.com/community/tutorials/wordcloud-python
 - https://machinelearningmastery.com
+- https://www.bespeaking.com/wp-content/uploads/2019/09/Movie-vocab.jpg
