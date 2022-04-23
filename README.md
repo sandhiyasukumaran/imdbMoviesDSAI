@@ -235,13 +235,17 @@ genreFreq.head(n=10)
 ![genreFreq](https://user-images.githubusercontent.com/81760484/164620806-17a03280-1762-4774-a01d-5abbd2c3a51e.png)
 
 **Observations (from Uni-variate)** 
-most common genre : Drama 
-we asked ourselves, why? is it because it is the most profitable?
-this formed our hypothesis that: assuming that the movies industry follows demand and supply, there is high demand for Dramas, 
+- Most common genre : Drama 
+
+- We asked ourselves, why? is it because it is the most profitable?
+
+- this formed our hypothesis that: assuming that the movies industry follows demand and supply, there is high demand for Dramas, 
 so this genre will be the most popular with the highest ratings amongst the other genres.
 
 **genres vs mean imdb_scores**
+
 We calculated the mean imdb_scores for each genre. 
+
 The results : 
 
 &nbsp;&nbsp;&nbsp;&nbsp;![genre_vs_score](https://user-images.githubusercontent.com/81760484/164622775-e9f8010f-2613-46b5-95cb-7522ae5e9c4a.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -268,6 +272,12 @@ import requests
 Initially, we couldn't really see any pattern with only 2 and 4 imdb_score bins. 
 So we split into 5 bins and saw a clearer picture. 
 It does seem like higher budget can influence imdb_score. However, for the "horrendous" category, it seems like the budget used on them is higher. This could mean that although budget does follow a certain trend as imdb_score increases, we ought to be careful with our budget as there is still a risk of the movie turning out to be "horrendous" 
+
+```python
+# the new bins (5 categories) we used 
+# bins = [1,3,4,6,9,10], labels = ["horrendous", "very bad", "bad", "ok", "good"]
+
+```
 
 ![budget_vs_imdb_score](https://user-images.githubusercontent.com/81760484/163830896-41f5615a-ab65-498c-85d1-292c307c58ee.png)
 
