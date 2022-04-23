@@ -428,7 +428,7 @@ Do you, as a movie director, have these personality traits too?
 
 So a movie director should pay close attention to the aforementioned factors. 
 
-Generally, based on our EDA, movies with the following attributes will do better on the imdb rating score:
+Generally, based on our EDA and ML, movies with the following attributes will do better on the imdb rating score:
 - Higher duration
 - Higher budget 
 - More popular director and cast 
