@@ -475,16 +475,19 @@ Generally, based on our EDA, movies with the following attributes will do better
   - ML : KMeans, Decision Tree 
   - Presentation 
   - EDA
+  - Codes for EDA : [EDA on last 9 Variables](https://github.com/imaginaryBuddy/imdbMoviesDSAI/blob/main/EDA_on_last_9.ipynb)
   - Data Visualisation 
 2. Sandhiya Sukumaran 
   - ML : Random Forest, Linear Regression 
   - Presentation 
   - EDA 
+  - Codes for EDA : [EDA on mid 9 Variables](https://github.com/imaginaryBuddy/imdbMoviesDSAI/blob/main/EDA_on_mid_9.ipynb)
   - Data Visualisation 
 3. Yap Shen Hwei 
   - ML : Logistic Regression
   - Presentation 
   - EDA
+  - Codes for EDA : [EDA on first 9 Variables](https://github.com/imaginaryBuddy/imdbMoviesDSAI/blob/main/EDA_on_first_9.ipynb)
   - Github 
 
 # Our Video: 
