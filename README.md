@@ -34,7 +34,7 @@ We wonder, **"If we were movie directors, how could we maximise our success rate
 - [Interesting Questions](#interesting-questions)
 - [The Big Conclusion](#the-big-conclusion)
 - [Beyond Our Course](#beyond-our-course)
-- [Limitations and Discussion](#limitaions-and-discussion)
+- [Limitations and Discussion](#limitations-and-discussion)
 - [Workload Delegation](#workload-delegation)
 - [Our Video](#our-video)
 - [References](#references) 
@@ -471,19 +471,19 @@ Generally, based on our EDA, movies with the following attributes will do better
 
 
 # Workload Delegation: 
-1. Koh Zi En 
+### 1. Koh Zi En
   - ML : KMeans, Decision Tree 
   - Presentation 
   - EDA
   - Codes for EDA : [EDA on last 9 Variables](https://github.com/imaginaryBuddy/imdbMoviesDSAI/blob/main/EDA_on_last_9.ipynb)
   - Data Visualisation 
-2. Sandhiya Sukumaran 
+### 2. Sandhiya Sukumaran 
   - ML : Random Forest, Linear Regression 
   - Presentation 
   - EDA 
   - Codes for EDA : [EDA on mid 9 Variables](https://github.com/imaginaryBuddy/imdbMoviesDSAI/blob/main/EDA_on_mid_9.ipynb)
   - Data Visualisation 
-3. Yap Shen Hwei 
+### 3. Yap Shen Hwei 
   - ML : Logistic Regression
   - Presentation 
   - EDA
