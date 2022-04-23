@@ -157,7 +157,7 @@ It is interesting to note that Steven Spielberg is also one of directors from th
 - there is no significant linear correlation bewteen `num_critic_for_reviews` and `imdb_score`
 - the table below shows the movies sorted based on their `num_critic_for_reviews`, it does seem to show that `imdb_score` falls in a range of > 7.0 for these 20 movies. 
 
-<img src="https://user-images.githubusercontent.com/81760484/164884443-c08e3f60-516c-4781-9359-0e914ef7c222.png" width= 45% height=auto>&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/81760484/164884505-347d6c89-c932-4525-a889-70b4a0d01d3b.png" width= 45% height=auto>
+<img src="https://user-images.githubusercontent.com/81760484/164884443-c08e3f60-516c-4781-9359-0e914ef7c222.png" width= 40% height=auto>&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/81760484/164884505-347d6c89-c932-4525-a889-70b4a0d01d3b.png" width= 45% height=auto>
 
 - to be fair, it may be that there is some sort of indication for imdb_score based on num_critic_for_reviews (as shown on the table), perhaps due to the large proportion of data receiving close to 0 reviews, we couldn't observe a linear correlation. 
 
@@ -234,10 +234,10 @@ genreFreq.head(n=10)
 --->
 
 
-**Observations (from Uni-variate)** 
+**Observations** 
 - Most common genre : Drama 
 
-- We asked ourselves, why? is it because it is the most profitable?
+- Is it because it is the most profitable?
 
 - this formed our hypothesis that: assuming that the movies industry follows demand and supply, there is high demand for Dramas, 
 so this genre will be the most popular with the highest ratings amongst the other genres.
@@ -288,7 +288,7 @@ This could mean that although budget does follow a certain trend as imdb_score i
 - Positively-skewed, large proportion had no number of voted users 
 - Not much linear correlation either : with a correlation of -> 0.470567
 
-<img src="https://user-images.githubusercontent.com/81760484/164625453-d1feef57-1c50-44ea-a3b5-eea9f8cf59a3.png" width=50% height=auto> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/81760484/164625754-609acd65-b334-44d5-b4e6-6a21a6842547.png" width=50% height=auto>
+<img src="https://user-images.githubusercontent.com/81760484/164625453-d1feef57-1c50-44ea-a3b5-eea9f8cf59a3.png" width=40% height=auto> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/81760484/164625754-609acd65-b334-44d5-b4e6-6a21a6842547.png" width=40% height=auto>
 
 
 
@@ -373,9 +373,9 @@ Nevertheless, since the performance was good, we decided to use dectree on our T
 Random Forest was the best! (Although, again, there may be slight overfitting for the same reasons as dectree + it took quite long to load) 
 
 Accuracies of :
-Train Data - 0.96 
-Validation Data - 0.82 
-Test Data - 0.99 
+- Train Data = 0.96 
+- Validation Data = 0.82 
+- Test Data = 0.99 
 
 Feature importance in random forest shows how important each feature is in determining the decision the tree makes
 Below shows the feature importance for determining `imdb_score`. 
