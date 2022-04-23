@@ -489,6 +489,7 @@ Generally, based on our EDA, movies with the following attributes will do better
   - EDA
   - Codes for EDA : [EDA on first 9 Variables](https://github.com/imaginaryBuddy/imdbMoviesDSAI/blob/main/EDA_on_first_9.ipynb)
   - Github 
+  - Answering Interesting Questions : [Codes here](https://github.com/imaginaryBuddy/imdbMoviesDSAI/blob/main/answeringInterestingQues.ipynb)
 
 # Our Video: 
 
