@@ -355,9 +355,9 @@ We found out that the optimal number of clusters is 3 (using elbow method)
 
 The 2-D Grid, Parallel Coordinates Plot and Boxplot all show that `budget` is a huge determinant in influencing the split between the clusters! 
 
-<img src="https://user-images.githubusercontent.com/81760484/164648027-51a1331c-df06-4a7c-9420-e5898f8ab352.png" width="300" height="300">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/81760484/164648133-1a9c1421-39a0-40d2-bfd2-f9b8c470c9a6.png" width="300" height="300">
+<img src="https://user-images.githubusercontent.com/81760484/164648027-51a1331c-df06-4a7c-9420-e5898f8ab352.png" width=50% height=auto>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/81760484/164648133-1a9c1421-39a0-40d2-bfd2-f9b8c470c9a6.png" width=50% height=auto>
 
-<img src="https://user-images.githubusercontent.com/81760484/164648197-3e92f65c-5bd6-445e-8142-756df6bbf1e9.png" width=60% height = auto>
+<img src="https://user-images.githubusercontent.com/81760484/164952225-714f94ac-95c1-41ea-ad92-47430585f349.png" width=60% height = auto>
 
 
 ### Decision Tree 
@@ -380,7 +380,7 @@ Accuracies of :
 Feature importance in random forest shows how important each feature is in determining the decision the tree makes
 Below shows the feature importance for determining `imdb_score`. 
 
-![feature important](https://user-images.githubusercontent.com/81760484/164649061-77fa421d-19e2-41c5-8cd9-6124070ec14e.png)
+![feature importance](https://user-images.githubusercontent.com/81760484/164649061-77fa421d-19e2-41c5-8cd9-6124070ec14e.png)
 
 Turned out that `num_voted_users`, `duration`, `num_user_for_reviews`, `num_critic_for_reviews` and `budget` are the top5 determinants. 
 
