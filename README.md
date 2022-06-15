@@ -293,7 +293,7 @@ This could mean that although budget does follow a certain trend as imdb_score i
 
 
 ### 8. imdb_score 
-<img src="https://user-images.githubusercontent.com/81760484/164626388-4422ef1a-71de-401e-a0cd-c0ea813dc8b6.png" width=50% height=aito>
+<img src="https://user-images.githubusercontent.com/81760484/164626388-4422ef1a-71de-401e-a0cd-c0ea813dc8b6.png" width=50% height=auto>
 
 <!---<img src="https://user-images.githubusercontent.com/81760484/164626481-f8250bfb-9b1e-49e1-a235-8545d1c0fcca.png" width="600" height="300">
 --->
@@ -303,7 +303,7 @@ A large proportion has imdb score of around 5-8.
 The median of imdb_score is 6.5, which is why we chose one of our bins to be [0. 6.6, 10] (i.e. 0-6.5 will be classfied as "bad" and 6.6-10 as "good") 
 
 ## Multivariate EDA 
-<img src="https://user-images.githubusercontent.com/81760484/164652576-56979110-8b18-4e20-9403-3cc86f84a1d2.png" width=50% height=aito>
+<img src="https://user-images.githubusercontent.com/81760484/164652576-56979110-8b18-4e20-9403-3cc86f84a1d2.png" width=50% height=auto>
 The heat map shows that some variables affecting imdb_score are:
 
 - `num_critic_for_reviews`
